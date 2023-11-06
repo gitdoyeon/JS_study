@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>this키워드</title>
+</head>
+<body>
+    <button onclick="this.style.backgroundColor='red'">클릭1</button>
+    <button onclick="callFunc(this)">클릭2</button>
+    <select onchange="changeSelect(this)">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+
+    <script>
+        // function changeSelect(obj2) {
+        //     // alert("changeSelect() 함수 호출");
+        //     console.log(obj2);
+        //     console.log(obj2.value);
+        // }
+
+
+        // function callFunc(obj1) {
+        //     //alert("callFunc() 함수 호출");
+        //     console.log(obj1);           
+        // }
+
+        // // console.log(this);
+        // // this.alert("안녕하세요?");
+
+        // function myFunction() {
+        //     //console.log("myFunction() 호출");
+        //     console.log(this);
+        // }
+        // myFunction();
+
+        // function fullName() {
+
+        // }
+
+        var person = {
+            firstName : "길동",
+            lastName : "홍",
+            fullName : function() {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        console.log(person.fullName());
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<html>
+<head>
+    <title>클래스</title>
+</head>
+<body>
+    <script>
+        // 클래스 : 객체를 생성하기 위한 틀, 설계도
+        class Car {            
+            constructor(modelName, modelYear, type, price) {
+                this.modelName = modelName;
+                this.modelYear = modelYear;
+                this.type = type;
+                this.price = price;
+            } // 생성자  
+            getModelName() {
+                return this.modelName;
+            }
+            getModelYear() {
+                return this.modelYear;
+            }
+            getType() {
+                return this.type;
+            }
+            getPrice() {
+                return this.price;
+            }
+            setPrice(price) {
+                this.price = price;
+            }
+        }
+
+        // let car1 = new Car("아이오닉", "2021", "E", 4000);
+        // console.log(car1.getModelName());
+        // console.log(car1.getModelYear());
+        // console.log(car1.getType());
+        // console.log(car1.getPrice());
+        // car1.setPrice(3000);
+        // console.log(car1.getPrice());
+
+        // console.log("------------------------------------------")
+        
+        // let car2 = new Car("제니시스", "2023", "G", 8500);
+        // console.log(car2.getModelName());
+        // console.log(car2.getModelYear());
+        // console.log(car2.getPrice());
+
+        class ElectronicCar extends Car {
+            constructor(modelName, modelYear, price, time) {
+                super(modelName, modelYear, "E", price) 
+                this.time = time;
+            }
+            getTime() {
+                return this.time;
+            }
+            setTime(time) {
+                this.time = time;
+            }
+        }
+
+        let eleCar1 = new ElectronicCar("아이오닉2", "2022", 4800);
+        console.log(eleCar1.getModelName());
+        console.log(eleCar1.getModelYear());
+        console.log(eleCar1.getType());
+        console.log(eleCar1.getPrice());
+
+        let eleCar2 = new ElectronicCar("아이오닉3", "2024", 5500, 60);
+        console.log(eleCar2.getModelName());
+        console.log(eleCar2.getModelYear());
+        console.log(eleCar2.getType());
+        console.log(eleCar2.getPrice());
+
+        eleCar2.setTime(30);
+        console.log(eleCar2.getTime());
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

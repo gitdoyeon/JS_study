@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Object Destructuring</title>
+</head>
+<body>
+    <script>
+        function getPerson() {
+            return {
+                firstName : "길동",
+                lastName : "홍",
+                age : 23,
+                email : "Hong@gmail.com",
+                city : "Seoul",
+                country : "Chosum"
+            }
+        }
+        var person = getPerson();
+        console.log(person);
+        console.log(typeof person);
+        console.log(person.firstName);
+        console.log(person.lastName);
+
+        var {firstName, lastName}= getPerson();
+        console.log(firstName);
+        console.log(lastName);
+
+
+
+
+    </script>
+</body>
+</html>
