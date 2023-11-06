@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function solution(s) {
+            let answer="";
+            // console.log(Math.floor(s.length/2));   // 2
+            let mid = Math.floor(s.length/2);
+            // console.log(mid);            
+            
+            // 방법-1 : substring 이용
+            // if(s.length % 2 == 1) {
+            //         answer = s.substring(mid, mid+1);
+            // }
+            // else {
+            //         answer = s.substring(mid-1, mid+1);
+            // }
+
+            // 방법-2 : substr 이용
+            if(s.length % 2 == 1) {
+                    answer = s.substr(mid, 1);
+            }
+            else {
+                    answer = s.substr(mid-1, 2);
+            }
+            return answer;
+        } //function
+        console.log(solution("study"));         // 출력값 : u
+        console.log(solution("teacher"));       // 출력값 : c
+        console.log(solution("good"));          // 출력값 : oo
+        console.log(solution("length"));        // 출력값 : ng
+    </script>
+</body>
+</html>

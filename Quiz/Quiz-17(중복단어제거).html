@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>중복단어제거</title>
+</head>
+<body>
+    <script>
+        function solution(s) {
+            let answer;
+            // console.log(s.indexOf("time"));
+            // answer = s.filter(function(v, i){
+            //     //console.log(v, i, s.indexOf(v));
+            //     // if(s.indexOf(v) === i) {
+            //     //     return true;
+            //     // }
+            //     return s.indexOf(v) === i;
+            // });
+            // return answer;
+
+            // arrow function 사용
+            answer = s.filter((v, i) => s.indexOf(v) === i);
+            return answer;
+        } //function
+        let str = ["good", "time", "good", "time", "student"];
+        console.log(solution(str));
+    </script>
+</body>
+</html>

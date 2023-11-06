@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function solution(str) {
+            let answer = "";
+            
+            // 방법1 : parseInt() 사용
+            // for(let x of str) {
+            //     // console.log(x);
+            //     if(!isNaN(x))
+            //         answer += x
+            // } // for
+            // console.log(answer);            
+
+            // 방법2 : parseInt() 함수 사용 금지
+            // for(let x of str) {
+            //     if(!isNaN(x)) {
+            //         // console.log(x);
+            //         answer = answer * 10 + Number(x);
+            //     }
+            // } // for
+
+            // 방법3 : 정규표현식 사용
+            // console.log(Number(str.replace(/[^0-9]/g, '')));
+            return Number(str.replace(/[^0-9]/g, ''));
+        } //function
+        let str = "g0en2T0s8eSoft";     // 0208 ==> 208
+        console.log(solution(str));
+    </script>
+</body>
+</html>

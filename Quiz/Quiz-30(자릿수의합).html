@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function solution(arr) {
+            let answer=0, max = Number.MIN_SAFE_INTEGER;
+            for(let x of arr) {
+                // console.log(x);
+                //방법1 : while문 이용
+                // let sum=0, temp=x;
+                // while(temp) {
+                //     sum += temp % 10;
+                //     temp = Math.floor(temp / 10);
+                // } // while                
+                
+                // 방법2 : 내장함수 이용
+                let sum = x.toString().split('').reduce((a,b) => a + Number(b), 0);
+                console.log(sum);
+
+                if(sum>max) {
+                    max = sum;
+                    answer = x;
+                }
+                else if(sum===max) {
+                    if(x>answer)
+                        answer = x;
+                 }
+            } // for            
+
+            return answer;
+        } //function
+        let arr = [7, 460, 128, 603, 40, 521, 137, 123, 1200];
+        console.log(solution(arr));
+
+    </script>
+</body>
+</html>

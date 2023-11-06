@@ -1,0 +1,36 @@
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function solution(str) {
+            let answer="YES";
+            str = str.toLowerCase();
+            // console.log(str);
+
+            // 방법1 : index를 이용한 직접 비교방법
+            // let len = str.length;
+            // for(let i=0; i<Math.floor(len/2); i++) {
+            //     // console.log(i);
+            //     if(str[i] !== str[len-i-1]) {
+            //         return answer = "NO";
+            //     }
+            // } // for
+
+            // 방법2 : reverse() 함수 이용
+            // console.log(str.split('').reverse().join(''));
+            if(str !== str.split('').reverse().join('')) 
+                return answer="NO";
+
+
+            return answer;
+        } //function
+        
+        let str = "gooG";           // YES
+        // let str = "Student";     // NO
+        console.log(solution(str));
+    </script>
+</body>
+</html>

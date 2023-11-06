@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        // 사용자 정의 함수
+        function isPrime(num) {
+            if(num===1) return false;
+            for(let i=2; i<num; i++) {
+                if(num%i===0) return false;
+            }
+            return true;
+        } // function
+
+
+        function solution(arr) {
+            let answer = [];
+
+            // 방법1 : while문 이용
+            // for(let x of arr) {
+            //     // console.log(x);
+            //     let res = 0;
+            //     while(x) {
+            //         let t = x % 10;
+            //         res = res * 10 + t;
+            //         x = parseInt(x / 10);     
+            //     }               
+            //     // console.log(res);
+            //     if(isPrime(res)) answer.push(res);
+            // } // for
+
+            // 방법2 : 내장함수 이용
+            for(let x of arr) {
+                // console.log(x);
+                let res = Number(x.toString().split('').reverse().join(''));
+                // console.log(res);
+                if(isPrime(res)) answer.push(res);
+            }
+
+
+            return answer;
+        } //function
+        let arr = [32, 55, 62, 20, 250, 370, 200, 30, 100];
+        console.log(solution(arr));
+    </script>
+</body>
+</html>

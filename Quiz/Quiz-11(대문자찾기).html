@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>대문자 찾기</title>
+</head>
+<body>
+    <script>
+        function solution(s) {
+            let answer=0;
+
+            // 방법1 : toUpperCase() 함수 이용
+            // for(let x of s) {
+            //     //console.log(x, x.toUpperCase());
+            //     if(x===x.toUpperCase()) answer++;
+            // }
+            
+            // 방법2 : charCodeAt() 함수를 이용해서 아스키코드를 이용하는 방법
+            for(let x of s) {
+               // console.log(x);
+               let num = x.charCodeAt();
+               //console.log(num);
+               if(num>=65 && num<=90) answer++;
+            }
+            
+            return answer;
+
+
+
+        } //function
+        let str = "KoreaTimeGood"
+        console.log(solution(str));
+    </script>
+</body>
+</html>

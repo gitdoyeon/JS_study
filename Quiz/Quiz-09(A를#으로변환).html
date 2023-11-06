@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function solution(str) {
+            let answer="";
+            //console.log(str);
+            // 방법1 : for문을 이용
+            // for(let x of str) {
+            //     // console.log(x);
+            //     if(x==='A') answer += "#";
+            //     else answer += x;
+            // }
+
+            //방법2 : replace() 내장함수와 정규표현식
+            answer = str.replace(/A/ig, '#');
+
+            return answer;
+        } //function
+        let str = "BaNANa";
+        console.log(solution(str));
+    </script>
+</body>
+</html>

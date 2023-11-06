@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>일곱난쟁이</title>
+</head>
+<body>
+    <script>
+        function solution(arr) {
+            let answer;
+            // console.log(arr);
+            // 방법1 - for문을 이용
+            // let sum = 0;
+            // for(let x of arr) {
+            //     // console.log(x);
+            //     sum += x;
+            // }
+            // console.log(sum);
+
+            // 방법2 - 내장함수를 이용한 방법
+            // let sum = arr.reduce(function(a,b){
+            //     return a + b;
+            // });
+            // console.log(sum);
+
+            // 방법3 - arrow function을 이용한 방법
+            // let sum = arr.reduce((a,b) => a+b);
+            // console.log(sum);
+
+            // 배열의 총합
+            let sum = arr.reduce((a,b) => a+b);
+            for(let i=0; i<8; i++) {
+                for(let j=1; j<9; j++) {
+                    // console.log(arr[i], arr[j]);
+                    if((sum - arr[i] - arr[j])===100) {
+                        // console.log(arr[i], arr[j]);
+                        // arr.splice(i, 1);    // 배열의 앞쪽의 값이 먼저 삭제되면서
+                        // arr.splice(j, 1);    // 순서가 바뀜
+                        arr.splice(j, 1);
+                        arr.splice(i, 1);
+                    }
+                } // for j
+            } // for i
+            // console.log(arr);
+            answer = arr;
+            return answer;
+        } //function
+        let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+        console.log(solution(arr));
+
+        // splice() 사용법 : 배열에 새로운 항목의 추가 및 삭제
+        //let fruits = ["Banana", "Orange", "Apple"];
+        //console.log(fruits.splice(1,2));    // 출력값 : ['Orange', 'Apple']
+        //console.log(fruits.splice(1,1));
+        // fruits.splice(1,0,"Lemon", "Kiwi");
+        // console.log(fruits);
+
+       
+       
+
+
+    </script>
+</body>
+</html>
+
+

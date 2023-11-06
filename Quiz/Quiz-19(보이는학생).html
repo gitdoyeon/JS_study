@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>보이는 학생</title>
+</head>
+<body>
+    <script>
+        function solution(arr) {
+            let answer=1, max = arr[0];
+            for(let i=1; i<arr.length; i++) {
+                if(arr[i] > max) {
+                    answer++;
+                    max = arr[i];
+                }
+            }
+            console.log(max);
+            return answer;
+        } //function
+        let arr = [130, 135, 148, 140, 147, 150, 150, 153];
+        console.log(solution(arr));
+    </script>
+</body>
+</html>

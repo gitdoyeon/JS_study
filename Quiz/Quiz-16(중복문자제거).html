@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>중복문자제거</title>
+</head>
+<body>
+    <script>
+        function solution(s) {  // s = "ksekkset"
+            // let answer="";
+            // console.log(s.indexOf('k'));    // 출력값 : 0
+            // console.log(s.indexOf('e'));    // 출력값 : 2
+            // console.log(s.indexOf('t'));    // 출력값 : 7
+            // console.log(s.indexOf('K'));    // 출력값 : 7
+
+            // for(let i=0; i<s.length; i++) {
+            //     // console.log(s[i], i, s.indexOf(s[i]));
+            //     if(s.indexOf(s[i]) === i) {
+            //         answer += s[i];
+            //     }
+            // }
+            // return answer;
+
+            // 특정 문자 갯수 출력
+            let answer = 0;
+            let pos = s.indexOf('s');
+            //console.log(pos);
+            while(pos !== -1) {
+                //console.log(pos);
+                answer++;
+                pos = s.indexOf('s', pos+1);
+            }
+            return answer;
+        } //function
+        console.log(solution("ksekkset"));
+    </script>
+</body>
+</html>
