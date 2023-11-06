@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Number 64bit 부동소수점</title>
+</head>
+<body>
+    <script>
+        let x = 0.1 + 0.2;  // 0.30000000000000004
+        console.log(x);
+
+        console.log(1/2);   // 유한소수
+        console.log(2/3);   // 무한소수
+        console.log(1/10);  
+
+        console.log((0.1).toString(2)); // 0.0001100110011001100110011001100110011001100110011001101
+        console.log((0.2).toString(2)); // 0.0011001100110011001100110011001100110011001100110011010
+                                        // 0.0100110011001100110011001100110011001100110011001100111                    
+        console.log(parseInt('0100110011001100110011001100110011001100110011001100111',2) * Math.pow(2,-55));
+
+        // 부동소수점 연산에는 외부 라이브러리를 활용
+        // BigNumber.js
+        // Big.js
+        // Decimal.js
+
+        console.log(Number.MAX_SAFE_INTEGER);   // 최대 출력값 : 9007199254740991
+        let x2 = 999999999999999;
+        console.log(x2);        // 정상적으로 출력됨.
+
+        let x3 = 9999999999999999;
+        console.log(x3);
+
+    </script>
+</body>
+</html>
