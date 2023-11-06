@@ -1,0 +1,122 @@
+<html>
+<head>
+    <title>String 내장함수</title>
+</head>
+<body>
+    <script>
+        // length : 문자열의 길이를 리턴
+        // var txt = "ABCDEFGHIJKMN";
+        // console.log(txt.length);
+
+        // indexOf : 특정한 문자열의 위치값을 리턴
+        // var str = "Please locate where 'locate'";
+        // console.log(str);
+        // console.log(str.indexOf("locate"));
+        // console.log(str.indexOf("choi"));
+
+        // if(str.indexOf("locate") > -1) {
+        //     console.log("locate 문자 발견");
+        // }
+
+        // lastIndexOf
+        // console.log(str.lastIndexOf("locate"));
+
+        // search
+        // console.log(str.search("locate"));
+
+        // slice
+        // var str = "Apple, Banana, Kiwi";
+        // console.log(str.slice(7, 13));  // 출력값 : Banana
+        // console.log(str.slice(7));      // 출력값 : Banana, Kiwi
+        // console.log(str.slice(-12, -6)); // 출력값 : Banana, -붙이면 맨끝 문자열에서부터 -1부터 시작
+        
+        // substring
+        // console.log(str.substring(7,13));   // 출력값 : Banana
+
+        // substr
+        // console.log(str.substring(7,6));    // 출력값 : Banana
+
+        // var jumin1 = "070828";
+        // console.log(jumin1.substr(0,2));    // 출력값 : 07년
+        // console.log(jumin1.substr(2,2));    // 출력값 : 08월
+        // console.log(jumin1.substr(4,2));    // 출력값 : 28일
+
+        // var jumin2 = "2007-08-28";    // var jumin2 = "07-08-28"; 
+        // console.log(jumin2.substring(0, jumin2.indexOf("-")));      // 출력값 : 2007
+
+        // replace
+        // var str1 = "please visit here";
+        // var str2 = str1.replace("here", "there");
+        // console.log(str2);
+
+        // var str3 = "please visit here here here";
+        // var str4 = str3.replace("here", "there");
+        // console.log(str4);
+
+        // 정규표현식을 이용
+        // var str5 = "please visit here here here";
+        // var str6 = str5.replace(/here/g, "there");          // g = global 의미
+        // console.log(str6);
+
+        // var str7 = "please visit here HERE Here";
+        // var str8 = str7.replace(/here/gi, "there");             // i = ignore 의미
+        // console.log(str8);
+
+        // 대문자로 변환
+        // var str9 = "please visit here Here";        
+        // console.log(str9.toUpperCase());
+        // console.log(str9.toLowerCase());
+
+        // 데이터베이스 : John, JOHN, john
+
+        // var txt1 = "Hello";
+        // var txt2 = "World";
+        // var txt3 = txt1 + " " + txt2;
+        // console.log(txt3);
+        // console.log(txt1.concat(txt2));
+        // console.log(txt1.concat(" ", "Choi", " " , txt1 + " " + txt2));
+
+        // var str10 = "         Hello             World!           ";
+        // console.log(str10);
+        // console.log(str10.trim());
+
+        // padStart
+        // var str11 = "15";
+        // console.log(str11.padStart(4, 0));
+        
+        // var str12 = "3";
+        // var str13 = "13";
+        // console.log(str12.padStart(2,0));
+        // console.log(str13.padStart(2,0));            
+        // console.log(str13.padEnd(4, 0));
+
+        // charAt
+        // var str14 = "Hello World!!";
+        // var str14 = "123456-1234567";
+        // console.log(str14.charAt(7));
+
+        // split
+        var tags = "키보드,기계식,블루투스";
+        var arr1 = tags.split(",");
+        console.log(arr1);
+
+         var birthday = "2007-08-28";
+         var arr2 = birthday.split("-");   
+         console.log(arr2);
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

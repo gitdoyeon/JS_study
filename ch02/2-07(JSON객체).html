@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>JSON 객체</title>
+</head>
+<body>
+    <script>
+        // 데이터를 저장하고 전송하기 위한 데이터포맷
+        // 서버에서 웹페이지(웹페이지에서 서버)로 데이터를 전송할 때 사용
+        // JSON 기본 형태
+        var data = {
+            "employees" : [
+                {"firstName":"길동", "lastName":"홍"},
+                {"firstName":"길순", "lastName":"홍"},
+                {"firstName":"철수", "lastName":"김"}
+            ]
+        }
+        // JSON.stringify - object를 string으로 변환하여 출력
+        console.log(data);
+        console.log(JSON.stringify(data));
+
+        // JSON parse - string을 oject로 변환하여 출력
+        var text = '{"employees":[' +
+                   '{"firstName":"길동", "lastName":"홍"},' +
+                   '{"firstName":"길순", "lastName":"홍"},' +
+                   '{"firstName":"철수", "lastName":"김"}]}';
+        console.log(text);      
+        console.log(JSON.parse(text));               
+
+    </script>
+</body>
+</html>

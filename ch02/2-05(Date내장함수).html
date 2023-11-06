@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Date 내장함수</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+</head>
+<body>
+    <script>
+        // var d1 = new Date();
+        // console.log(d1);
+
+        // 특정 날짜 및 시간을 직접 지정 : 2023년 12월 24일 13시30분
+        // var d2 = new Date(2023,11,25,13,30);    // 월 : 0 -> 1월,  일 : 1 -> 1
+        // console.log(d2.getMonth());
+        //console.log(d2);
+
+        // month 월이 0으로 시작하는 이유
+        // 2023.04.21 or 2023-04-21
+        // 월, 일, 년도 - Apr 21 2023
+        // var month = ["Jan", "Feb", "Mar"];
+        // var mon = 2;
+        // console.log(month[mon]);
+
+        // var d3 = new Date();
+        // console.log(d3);
+        // var year = d3.getFullYear();
+        // console.log("year = " + year);
+        // var month = d3.getMonth();
+        // console.log("month = " + (month+1));
+        // var date = d3.getDate();
+        // console.log("date = " + date);
+        // var day = d3.getDay();
+        // console.log("day = " + day);    // 0:일요일, 1:월요일....
+        // var hour = d3.getHours();
+        // var minute = d3.getMinutes();
+        // var second = d3.getSeconds();
+        // console.log(hour, minute, second);
+
+        // 글로벌 서비스일 경우에는 접속한 국가의 타임존을 고려
+        // 한국 : 2023.04.21 14:05
+        // 글제목, 작성, 작성일 : 2023.04.21 14:05 
+        // 영국 : 2023.04.21 05:05
+        // 한국 시간대를 자동으로 영국 시간대로 변경해줘야 함.
+
+        // var d4 = new Date();
+        // console.log("timezome", d4.getTimezoneOffset());        // 출력값(분단위) -540분 ==> -9시간
+
+        // var d5 = new Date();
+        // d5.setFullYear(2007);
+        // d5.setMonth(7);
+        // d5.setDate(28);
+        // console.log(d5);
+
+        // moments.js 라이브러리 
+        var d6 = new Date();
+        console.log(d6);
+        console.log(moment().format("YYYY-MM-DD"));
+        console.log(moment().format("MMM DD, YYYY"));
+
+        // 오늘을 기준으로 일주일전을 검색
+        console.log(moment().subtract(7, "days").format("YYYY-MM-DD"));
+
+        // 오늘을 기준으로 일주일후를 검색
+        console.log(moment().add(7, "days").format("YYYY-MM-DD"));
+
+        // 4시간 이후
+        console.log(moment().add(4, "hours").format("YYYY-MM-DD HH"));
+
+    </script>
+</body>
+</html>

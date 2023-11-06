@@ -1,0 +1,186 @@
+<html>
+<head>
+    <title>Array 내장함수</title>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        // var fruits1 = ["Banana", "Orange", "Apple"];
+        // // toString()
+        // console.log(fruits1);
+        // console.log(fruits1.toString());
+
+        // // join()
+        // console.log(fruits1.join(" * "));
+        
+        // var txt1 = "Banana<br>";
+        // txt1 += "Orange<br>";
+        // txt1 += "Apple<br>";
+        // //console.log(txt1);
+        // document.getElementById("div1").innerHTML = txt1;
+
+        // var arr1 = [];
+        // arr1.push("Banana");
+        // arr1.push("Orange");
+        // arr1.push("Apple");
+
+        // // console.log(arr1);
+        // document.getElementById("div1").innerHTML = arr1.join("<br>");
+
+        // pop() : 배열의 가장 마지막 항목을 제거하여 리턴
+        // var fruits2 = ["Banana", "Orange", "Apple"];
+        // var arr2 = fruits2.pop();
+        // console.log(arr2);
+        // console.log(fruits2);   // ["Banana", "Orange"];
+        // fruits2.push("Kiwi");
+        // console.log(fruits2);
+
+        // shift() : 배열의 첫번째 항목을 제거하여 리터함.
+        // var fruits3 = ["Banana", "Orange", "Apple"];
+        // var str = fruits3.shift();      // str = "Banana"
+        // console.log(str);
+        // console.log(fruits3);
+
+        // unshift() : 배열의 첫번째에 새로운 항목을 추가함.
+        // var fruits4 = ["Banana", "Orange", "Apple"];
+        // fruits4.unshift("Lemon");
+        // console.log(fruits4);  //출력값 : ['Lemon', 'Banana', 'Orange', 'Apple']
+
+        // fruits4[0] = "Grape";
+        // console.log(fruits4);  //출력값 : ["Grape", 'Banana', 'Orange', 'Apple']
+        // console.log(fruits4.length);
+        // fruits4[fruits4.length-1] = "Peach";
+        // console.log(fruits4);
+
+        // splice(a,b) : 배열의 중간에 삽입
+        // a = 시작 위치
+        // b = 삭제할 항목 수
+        // var fruits5 = ["Banana", "Orange", "Apple"];
+        // fruits5.splice(1, 1);   // 출력값 :  ['Banana', 'Apple']
+        // fruits5.splice(1, 2);   // 출력값 :  ['Banana']
+        // fruits5.splice(1);   // 출력값 :  ['Banana']
+        // fruits5.splice(1, 1 , "Lemon", "Kiwi");
+        // console.log(fruits5);
+
+        // concat() : 두 개의 배열을 하나로 만들어줌
+        // var BTS1 = ["뷔"];
+        // var BTS2 = ["정국", "RM"];
+        // var BTS = BTS1.concat(BTS2);
+        // console.log(BTS);
+
+        // slice(a, b)
+        // a부터 b-1 까의 항목을 가져옴.
+        // var fruits6 = ["Banana", "Orange", "Apple"];
+        // //var fruits6 = fruits6.slice(1);
+        // // var fruits6 = fruits6.slice(1, 2);
+        // var fruits6 = fruits6.slice(1, 3);
+        // console.log(fruits6);
+
+        // var fruits8 = ["Banana", "Orange", "Apple", "Lemon", "Kiwi"];
+        // console.log(fruits8.sort());
+
+        // var points = [40, 100, 70, 21, 99];
+        // console.log(points.sort());
+        // points.sort(function(a, b){
+        //     if(a>b) return 1;
+        //     else if(a<b) return -1;
+        //     else return 0;
+        // });
+
+        // points.sort(function(a, b){
+        //     return a - b;
+        // });
+
+        // console.log(points);
+        // console.log(points.reverse());
+
+        // object 정렬
+        // var persons = [
+        //     {name:"유재석", point:78},
+        //     {name:"김종국", point:92},
+        //     {name:"양세찬", point:76},
+        //     {name:"하  하", point:81}
+        // ];
+
+        // persons.sort(function(a, b){
+        //     if(a.point > b.point) {
+        //         return 1;
+        //     }
+        //     else if(a.point < b.point) {
+        //         return -1;
+        //     }
+        //     else {
+        //         return 0;
+        //     }
+        // });
+
+        // 삼항 연산자
+        // (조건) ? true : false;
+        // persons.sort(function(a, b){
+        //     return (a.point > b.point) ? 1 : (a.point < b.point) ? -1 : 0;
+        // });
+        // console.log(persons);
+
+        // filter()
+        // var persons = [
+        //     {name:"유재석", point:78, city:"서울"},
+        //     {name:"김종국", point:92, city:"대구"},
+        //     {name:"양세찬", point:76, city:"서울"},
+        //     {name:"하  하", point:81, city:"제주"}
+        // ];
+
+        // for문으로 구하기
+        // var jeju = [];
+        // for(var i=0; i<persons.length; i++) {
+        //     if(persons[i].city== "제주") {
+        //         jeju.push(persons[i]);
+        //     }
+        // } // for
+        // console.log(jeju);
+
+        // filter으로 구하기
+        // var jeju = persons.filter(function(per) {
+        //     return per.city == "제주";
+        // });
+        // console.log(jeju);
+
+        // reduce()
+        // int total = 0;
+        // for(int i=1; i<=100; i++) {
+        //     total += i;
+        // }
+        // System.out.println(total);
+
+        // var arr3 = [1,2,3,4,5];
+        // var total = 0;
+        // for(var x of arr3) {
+        //     // console.log(x);
+        //     total += x;
+        // }
+        // console.log(total);
+
+        // reduce(a, c)
+        // a : accumulator - 누산기
+        // c : cuurentValue - 현재값
+        // var arr4 = [1,2,3,4,5];
+        // var total = arr4.reduce(function(a,c){
+        //    return a + c;     
+        // });
+        // console.log(total);
+
+        // map() : filter()와는 다른 형태로 새로운 배열을 생성
+        var userList = [
+            {firstName:"재석", lastName:"유", email:"yu@gamil.com"},
+            {firstName:"종국", lastName:"김", email:"kim@gamil.com"},
+            {firstName:"세찬", lastName:"양", email:"yang@gamil.com"},
+            {firstName:"석진", lastName:"지", email:"ji@gamil.com"}
+        ];    
+
+        var userList2 = userList.map(function(user) {
+            return {fullName : user.lastName + user.firstName, mmail:user.email}
+        });
+
+        console.log(userList2);
+    </script>
+</body>
+</html>
