@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>HTML Element</title>
+</head>
+<body>
+Text :
+<br>
+<input type="text" value="홍길동" id="text1">
+<br>
+관심사:
+<br>
+<input type="checkbox" name="chk_interest" value="it">IT/컴퓨터
+<input type="checkbox" name="chk_interest" value="entertainment">엔터테인먼트
+<input type="checkbox" name="chk_interest" value="sports">스포츠
+<input type="checkbox" name="chk_interest" value="shopping">쇼핑
+<input type="checkbox" name="chk_interest" value="book">도서/책
+<br>
+<input type="radio" name="radio_email_yn" value="Y" checked>동의
+<input type="radio" name="radio_email_yn" value="N">거부
+<br>
+Select :
+<select id="select1">
+    <option value="KO">Korea</option>
+    <option value="CN">China</option>
+    <option value="JP">Japan</option>
+</select>
+<br>
+<div id="div1"><h1>[div] 태그를 사용합니다.</h1></div>
+
+<input type="button" value="저장" onclick="doSave()">
+    <script>
+        document.getElementById("text1").value = "이순신";
+        function doSave() {
+            // alert("추억이 떠오르니?");
+            // console.log("[저장] 버튼 클릭");
+            // var txt1 = document.getElementById("text1");
+            // console.log(txt1);
+            // console.log(txt1.value);
+
+            // jQuery 방식
+            // var txt2 = document.querySelector("#text1");
+            // console.log(txt2);
+            // console.log(txt2.value);
+
+            // var txt1 = document.getElementById("text1");
+            // console.log(txt1.value);
+
+            // var check_box1 = document.getElementsByName("chk_interest");
+            // console.log(check_box1);
+
+            // for(var i=0; i<check_box1.length; i++) {
+            //     if(check_box1[i].checked) {
+            //         console.log(check_box1[i].value)
+            //     }
+            // }
+
+            // jQuery 방식
+            // var check_box2 = document.querySelectorAll("[name=chk_interest]:checked");
+            // console.log(check_box2);
+
+            // jQuery 방식
+            // var radio = document.querySelector("[name=radio_email_yn]:checked")
+            // console.log(radio.value);
+
+            // var select = document.getElementById("select1");
+            // console.log(select.value);
+
+            // var div_txt = document.getElementById("div1");
+            // console.log(div_txt);
+
+            // var div_txt = document.getElementById("div1").innerText;
+            // console.log(div_txt);
+
+            // var div_txt = document.getElementById("div1").innerHTML;
+            // console.log(div_txt);
+
+            console.log(document.getElementsByTagName("div"));
+
+        } //doSave
+
+    </script>
+</body>
+</html>

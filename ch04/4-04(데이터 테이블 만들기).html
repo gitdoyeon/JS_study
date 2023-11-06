@@ -1,0 +1,95 @@
+<html>
+<head>
+    <title>데이터 테이블 만들기</title>
+</head>
+<body>
+    <input type="text" id="searchTxt" onkeydown="checkEnter(event)">
+    <input type="button" value="조회" onclick="doSearch()">
+    
+    <table id="tb" border="1">
+        <thead>
+            <tr>
+                <th onclick="doSort('name')">Name</th>
+                <th onclick="doSort('email')">Email</th>
+                <th onclick="doSort('company')">Company</th>
+                <th onclick="doSort('address')">Address</th>
+            </tr>
+        </thead>
+
+        <tbody></tbody>
+
+    </table>
+
+    <script src="/js/4-04(데이터 테이블 만들기).js"></script>
+    <script>
+        var currentData = [];
+        // console.log(userList);   /// 데이터 파일 잘 불러왔는지 확인
+        
+        // 조회 버튼을 클릭했을 때 내용이 나오도록하는 함수
+        function doSearch() {
+            var search_txt = document.getElementById("searchTxt").value;
+            console.log(search_txt);
+
+            // 전체 data를 출력
+            if(search_txt === "") {
+                // currentData
+                rendetTable(userList);  // renderTable() : txt를 <tr>로 만들어줌
+            }
+            // 특정 키워드가 포함된 data만 출력
+            else {
+                var regExp = new RegExp(search_txt, "i");
+                var data = userList.filter(item => {
+                    if(regExp.test(item.name)) {
+                        return true;
+                    }
+                    else if(regExp.test(item.email)) {
+                        return true;
+                    }
+                    else if(regExp.test(item.company)) {
+                        return true;
+                    }
+                    else if(regExp.test(item.address)) {
+                        return true;
+                    }
+                    else {
+                        false;
+                    }
+                });
+                currentData(data);
+                renderTable(data);
+            }
+        }
+
+        function randerTable(data) {    // text -> table 변환
+            var h = [];
+            data.forEach(item => {
+                h.push(`<tr>`);
+                h.push(`<td>${item.name}</td>`);
+                h.push(`<td>${item.email}</td>`);
+                h.push(`<td>${item.company}</td>`);
+                h.push(`<td>${item.address}</td>`);
+                h.push(`<\tr>`);
+                console.log(h.join);
+            });
+            // console.log(h.join(''));
+            document.querySelector("#tb>tbody").innerHTML = h.join('');
+        }
+
+        function doSort(key) {
+            currentData.sort(function(a, b){
+                a[key] > b[key] ? 1 : a[key] < b[key] ? -1 : 0;
+            });
+            renderTable(currentData);
+        }
+
+
+        function checkEnter(event) {
+            if(event.keyCode==13) {
+                doSearch();
+            }
+        }
+
+
+    </script>
+</body>
+<html>
